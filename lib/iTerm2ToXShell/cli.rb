@@ -17,7 +17,7 @@ module ITerm2ToXShell
 		def usage
 			puts <<-EOS	
 Usage:
-	iTerm2ToXShell
+	iTerm2ToXShell [Options]
 Options:
 	-b, [--base-dir]	# Base directory
 	-v, [--version]		# Version
