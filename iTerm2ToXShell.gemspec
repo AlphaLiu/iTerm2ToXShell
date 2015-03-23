@@ -21,6 +21,8 @@ Gem::Specification.new do |spec|
 
 	spec.add_runtime_dependency "thor", "~> 0.19.1"
 	spec.add_runtime_dependency "agile_utils", "~> 0.2.3"
+  spec.add_runtime_dependency "code_lister", "~> 0.2.4"
+	spec.add_runtime_dependency 'plist', '~> 3.1', '>= 3.1.0'
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 10.0"
 	spec.add_development_dependency 'awesome_print', '~> 1.2', '>= 1.2.0'
