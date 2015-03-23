@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+require_relative "../lib/iTerm2ToXShell"
+include ITerm2ToXShell
+
+if ARGV.empty?
+	ITerm2ToXShell::CLI.start(%w[usage])
+else
+	ITerm2ToXShell::CLI.start(%w[convert].concat(ARGV))
+end
