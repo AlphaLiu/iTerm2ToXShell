@@ -15,11 +15,11 @@ module ITerm2ToXShell
 		file = File.new(file_name, "w")
 
 		file.write("[#{name}]\n")
-		(0..15).each do |index|
+		(0..17).each do |index|
 			file.write("#{pallete_name[index]}=#{pallete[index].downcase}\n")
 		end
-		file.write("#{pallete_name[16]}=#{fg.downcase}\n")
-		file.write("#{pallete_name[17]}=#{fg.downcase}\n")
+		#file.write("#{pallete_name[16]}=#{fg.downcase}\n")
+		#file.write("#{pallete_name[17]}=#{fg.downcase}\n")
 		file.write("baground=#{bg.downcase}\n")
 
 		file.write("[Names]\n")
@@ -68,6 +68,12 @@ module ITerm2ToXShell
 
 			pallete_hex << color_hex
 		end
+
+		#Text color bold and normal
+		#color_key = "Cursor Text Color"
+		color_hex = rgb_to_hex(iterm_to_rgb(plist['Cursor Text Color']))
+		pallete_hex << color_hex
+		pallete_hex << color_hex
 
 		format_to_xshell(new_file, base_name, bg_hex, fg_hex, pallete_name, pallete_hex)
 	end
