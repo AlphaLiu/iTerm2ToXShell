@@ -20,7 +20,7 @@ module ITerm2ToXShell
 		end
 		#file.write("#{pallete_name[16]}=#{fg.downcase}\n")
 		#file.write("#{pallete_name[17]}=#{fg.downcase}\n")
-		file.write("baground=#{bg.downcase}\n")
+		file.write("background=#{bg.downcase}\n")
 
 		file.write("[Names]\n")
 		file.write("count=1\n")
