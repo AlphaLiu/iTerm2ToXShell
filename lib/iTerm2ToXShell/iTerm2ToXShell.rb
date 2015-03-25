@@ -14,6 +14,9 @@ module ITerm2ToXShell
 
 		file = File.new(file_name, "w")
 
+		#delete all the space
+		#name.gsub!(/\s/, '')
+
 		file.write("[#{name}]\n")
 		(0..17).each do |index|
 			file.write("#{pallete_name[index]}=#{pallete[index].downcase}\n")
@@ -24,7 +27,7 @@ module ITerm2ToXShell
 
 		file.write("[Names]\n")
 		file.write("count=1\n")
-		file.write("name0=#{name.capitalize}")
+		file.write("name0=#{name}")
 
 		file.close
 	end
@@ -71,9 +74,9 @@ module ITerm2ToXShell
 
 		#Text color bold and normal
 		#color_key = "Cursor Text Color"
-		color_hex = rgb_to_hex(iterm_to_rgb(plist['Cursor Text Color']))
-		pallete_hex << color_hex
-		pallete_hex << color_hex
+		#color_hex = rgb_to_hex(iterm_to_rgb(plist['Cursor Text Color']))
+		pallete_hex << fg_hex
+		pallete_hex << fg_hex
 
 		format_to_xshell(new_file, base_name, bg_hex, fg_hex, pallete_name, pallete_hex)
 	end
